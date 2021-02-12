@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox alignment="center" stylesheets="styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com" fx:controller="sample.Controller"
+      id="Dogs application" prefHeight="200" prefWidth="300">
+
+    <Text text="Welcome"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="User Name:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Password:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <PasswordField fx:id="passwordField"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+
+    <MenuBar>
+
+        <Menu text="file">
+            <MenuItem onAction="#menuItemFileAction1" text="open" />
+            <MenuItem onAction="#menuItemFileAction" text="exit" />
+        </Menu>
+    </MenuBar>
+    <TextField fx:id="pathField" editable="false" focusTraversable="false" />
+    <ListView fx:id="filesList" onMouseClicked="#filesListClicked" VBox.vgrow="ALWAYS" />
+    <HBox spacing="5">
+        <Button maxWidth="Infinity" text="view" HBox.hgrow="ALWAYS" />
+        <Button maxWidth="Infinity" onAction="#copyAction" text="copy" HBox.hgrow="ALWAYS" />
+        <Button maxWidth="Infinity" text="moving" HBox.hgrow="ALWAYS" />
+        <Button maxWidth="Infinity" text="delete" HBox.hgrow="ALWAYS" />
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </HBox>
+   <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+     <items>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+     </items>
+   </SplitPane>
+   <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+     <items>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+     </items>
+      <opaqueInsets>
+         <Insets right="1.0" top="1.0" />
+      </opaqueInsets>
+   </SplitPane>
+</VBox>
